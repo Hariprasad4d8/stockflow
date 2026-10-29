@@ -76,7 +76,7 @@ function parseProduct(b) {
 app.get('/api/products', auth, wrap(async (req, res) => {
   const q = (req.query.q || '').trim();
   const where = { orgId: req.user.orgId };
-  if (q) where.OR = [{ name: { contains: q } }, { sku: { contains: q } }];
+  if (q) where.OR = [{ name: { contains: q, mode: 'insensitive' } }, { sku: { contains: q, mode: 'insensitive' } }];
   const [items, org] = await Promise.all([
     prisma.product.findMany({ where, orderBy: { updatedAt: 'desc' } }),
     prisma.organization.findUnique({ where: { id: req.user.orgId } }),
