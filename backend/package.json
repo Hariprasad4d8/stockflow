@@ -1,0 +1,15 @@
+{
+  "name": "stockflow-backend",
+  "version": "0.1.0",
+  "main": "src/index.js",
+  "scripts": { "dev": "node --watch src/index.js", "start": "node src/index.js" },
+  "dependencies": {
+    "@prisma/client": "^5.22.0",
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2"
+  },
+  "devDependencies": { "prisma": "^5.22.0" }
+}
